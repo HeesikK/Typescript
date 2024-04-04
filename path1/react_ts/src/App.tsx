@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import CustomButton from "./components/button";
+import CustomButton from "./components/button/button";
 import { ThemeProvider } from "styled-components";
 import theme from "./style/theme.style";
 

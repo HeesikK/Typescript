@@ -1,28 +1,6 @@
-import { ButtonHTMLAttributes, FC } from "react";
 import styled, { css } from "styled-components";
-import { flexCenter } from "../style/common.style";
-
-// interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-//   variant: "primary" | "secondary" | "error";
-//   size: "small" | "medium" | "large";
-//   shape: "default" | "shape" | "round";
-// }
-
-type ButtonProps = {
-  variant: "primary" | "secondary" | "error";
-  size: "small" | "medium" | "large";
-  shape: "default" | "shape" | "round";
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-const CustomButton: FC<ButtonProps> = ({ children, variant, size, shape, ...rest }) => {
-  return (
-    <Button variant={variant} size={size} shape={shape} {...rest}>
-      {children}
-    </Button>
-  );
-};
-
-export default CustomButton;
+import { flexCenter } from "../../style/common.style";
+import { ButtonProps } from "../../type/component.type";
 
 const variantCSS = {
   primary: css`
@@ -77,7 +55,7 @@ const shapeCSS = {
   `,
 };
 
-const Button = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   ${({ variant }) => variantCSS[variant]}
   ${({ size }) => sizeCSS[size]}
   ${({ shape }) => shapeCSS[shape]}
