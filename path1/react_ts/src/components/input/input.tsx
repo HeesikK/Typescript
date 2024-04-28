@@ -1,17 +1,14 @@
-// import React, { InputHTMLAttributes } from "react";
+import React from "react";
 
-// import { Input, InputContainer, Label } from "./style";
-// import { InputProps, LabelProps } from "../../type/component.type";
+import { Input, InputContainer } from "./style";
+import { InputProps } from "../../type/component.type";
 
-// type Props = InputProps & LabelProps & InputHTMLAttributes<HTMLInputElement>;
+const CustomInput: React.FC<InputProps> = ({ variant, size, shape, fontSize }) => {
+  return (
+    <InputContainer>
+      <Input variant={variant} size={size} shape={shape} fontSize={fontSize} />
+    </InputContainer>
+  );
+};
 
-// const CustomInput: React.FC<Props> = ({ variant, size, shape, fontSize, children }) => {
-//   return (
-//     <InputContainer>
-//       <Label fontSize={fontSize}>{children}</Label>
-//       <Input variant={variant} size={size} shape={shape} fontSize={fontSize} />
-//     </InputContainer>
-//   );
-// };
-
-// export default CustomInput;
+export default CustomInput;
