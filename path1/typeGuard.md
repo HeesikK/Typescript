@@ -3,3 +3,17 @@
 타입 가드문 또한 마찬가지입니다. 특정 함수의 매개 변수는 어떠한 타입이 올 수 있기 때문에 any 타입으로 추론되기 때문에 타입이 명확하지 않습니다.
 
 예를 들면 아래와 같습니다.
+
+```javascript
+function print(obj <-- any){
+	obj.seongyong // <-- any 타입에는 seongyong 속성은 존재하지 않음.
+}
+
+// 따라서 조금더 타입이 안정적인 환경과 생산성을 위한 자동안성을 지원하기 위해 타입 가드문을 사용합니다.
+
+function print(obj){
+	if(타입 === seongyong){ // <-- 타입 가드문
+    obj.seongyong
+	}
+}
+```
