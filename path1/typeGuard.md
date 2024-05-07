@@ -97,7 +97,7 @@ function sayIngredient (burger: CheeseBurger | BeefBurger) {
 function sayIngredient (burger: CheeseBurger | BeefBurger) {
 
 //BeefBurger일때만 실행되는 코드. 그러니
-// 커스텀타입은 typeof로 체크해줄수 없다.
+// 커스텀타입은 typeof로 체크해줄수 없다
 
 if (typeof burger === 'BeefBurger') {
         console.log('number of beef : ' + burger.numBeef
