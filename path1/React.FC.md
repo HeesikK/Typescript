@@ -154,4 +154,4 @@ React.createElement(
 ```
 
 createElement 함수가 반환한 모든 객체는 ReactElement의 인터페이스를 따르고 있다. 즉, jsx를 사용하면 createElement에
-의해 ReactElement가 만들어진다!
+의해 ReactElement가 만들어진다
