@@ -6,7 +6,7 @@
 
 ```javascript
 function print(obj <-- any){
-	obj.seongyong // <-- any 타입에는 seongyong 속성은 존재하지 않음.
+	obj.seongyong // <-- any 타입에는 seongyong 속성은 존재하지 않음
 }
 
 // 따라서 조금더 타입이 안정적인 환경과 생산성을 위한 자동안성을 지원하기 위해 타입 가드문을 사용합니다.
