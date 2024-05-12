@@ -2,7 +2,7 @@
 
 ### ts-config 파일이란?
 
-`tsconfig.json`파일은 TypeScript 컴파일러가 프로젝트를 어떻게 컴파일할지에 대한 설정을 제공하는 파일입니다.
+`tsconfig.json`파일은 TypeScript 컴파일러가 프로젝트를 어떻게 컴파일할지에 대한 설정을 제공하는 파일입니다
 
 ### 왜 쓸까요?
 
