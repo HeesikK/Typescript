@@ -12,7 +12,7 @@ console.log("Clicked!", event);
 alert("버튼 클릭");
 };
 // React.MouseEvent : 이벤트의 속성 타입이며, 제네릭에는 해당 이벤트가 발생한 태그(정확히 말하면 HTML 노드)의 타입을 준다.
-//옆에 태그 타입을 넣는 이유는 ? 태그에 해당하는 이벤트의 속성, 메서드를 사용하기 위해서, 관례니까.
+//옆에 태그 타입을 넣는 이유는 ? 태그에 해당하는 이벤트의 속성, 메서드를 사용하기 위해서, 관례니까
 
 const onChange = (
 e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
