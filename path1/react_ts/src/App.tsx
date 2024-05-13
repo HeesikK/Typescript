@@ -12,6 +12,7 @@ function App() {
       <CustomButton variant="primary" size="small" shape="round">
         button
       </CustomButton>
+      <CustomInput variant="primary" size="small" shape="shape" />
     </ThemeProvider>
   );
 }

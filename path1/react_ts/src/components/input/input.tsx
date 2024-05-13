@@ -1,12 +1,12 @@
-import React from "react";
-
+import { FC } from "react";
 import { Input, InputContainer } from "./style";
 import { InputProps } from "../../type/component.type";
 
-const CustomInput: React.FC<InputProps> = ({ variant, size, shape, fontSize }) => {
+const CustomInput: FC<InputProps> = ({ variant, size, shape }) => {
   return (
     <InputContainer>
-      <Input variant={variant} size={size} shape={shape} fontSize={fontSize} />
+      <label>아이디</label>
+      <Input variant={variant} size={size} shape={shape} />
     </InputContainer>
   );
 };

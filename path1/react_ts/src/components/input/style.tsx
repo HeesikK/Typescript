@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { InputProps } from "../../type/component.type";
+import { flexCenter } from "../../style/common.style";
 
 const variantCSS = {
   primary: css`
@@ -15,19 +16,19 @@ const variantCSS = {
 
 const sizeCSS = {
   small: css`
-    width: 160px;
-    height: 40px;
-    padding: 8px;
-  `,
-  medium: css`
-    width: 240px;
-    height: 45px;
+    width: 140px;
+    height: 20px;
     padding: 10px;
   `,
-  large: css`
-    width: 320px;
-    height: 80px;
+  medium: css`
+    width: 210px;
+    height: 30px;
     padding: 12px;
+  `,
+  large: css`
+    width: 280px;
+    height: 40px;
+    padding: 14px;
   `,
 };
 
@@ -43,27 +44,14 @@ const shapeCSS = {
   `,
 };
 
-const fontSizeCSS = {
-  small: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.small};
-  `,
-  medium: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.medium};
-  `,
-  large: css`
-    font-size: ${({ theme }) => theme.FONT_SIZE.large};
-  `,
-};
-
 export const Input = styled.input<InputProps>`
+  margin-left: 10px;
   ${({ variant }) => variantCSS[variant]}
   ${({ size }) => sizeCSS[size]}
   ${({ shape }) => shapeCSS[shape]}
-  ${({ fontSize }) => fontSizeCSS[fontSize]}
   border: 1px solid black;
 `;
 
 export const InputContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexCenter}
 `;

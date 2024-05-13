@@ -16,5 +16,4 @@ export type InputProps = {
   variant: "primary" | "secondary" | "error";
   size: "small" | "medium" | "large";
   shape: "default" | "shape" | "round";
-  fontSize: "small" | "medium" | "large";
-} & InputHTMLAttributes<HTMLInputElement>;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "style">;
