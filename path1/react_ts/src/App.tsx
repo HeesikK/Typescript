@@ -5,15 +5,27 @@ import CustomButton from "./components/button/button";
 import { ThemeProvider } from "styled-components";
 import theme from "./style/theme.style";
 import CustomInput from "./components/input/input";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { getMovieList } from "./apis/api";
 
 function App() {
+  const queryClient = new QueryClient({
+    defaultOptions: {},
+  });
+
+  const { data: movieList } = useQuery("movieList", () => getMovieList());
+
+  console.log(movieList);
+
   return (
-    <ThemeProvider theme={theme}>
-      <CustomButton variant="primary" size="small" shape="round">
-        button
-      </CustomButton>
-      <CustomInput variant="primary" size="small" shape="shape" />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <CustomButton variant="primary" size="small" shape="round">
+          button
+        </CustomButton>
+        <CustomInput variant="primary" size="small" shape="shape" />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 
