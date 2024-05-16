@@ -5,6 +5,7 @@ import { getMovieList } from "../apis/api";
 
 const HomePage = () => {
   const { data: movieList } = useQuery("movieList", () => getMovieList());
+  console.log(movieList);
 
   interface Movie {
     id: number;
@@ -25,7 +26,7 @@ const HomePage = () => {
 
   return (
     <div>
-      {movieData.map((data) => (
+      {movieData?.map((data) => (
         <div>{data.title}</div>
       ))}
       <CustomButton variant="primary" size="small" shape="round">
