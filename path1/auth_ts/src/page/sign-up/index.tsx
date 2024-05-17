@@ -3,15 +3,20 @@ import HSButton from "../../component/button";
 import HSInput from "../../component/input";
 import { useForm } from "react-hook-form";
 import { SignUpType } from "../../type/sign.type";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<SignUpType>({ mode: "onChange" });
 
-  const onSubmitSignUpForm = () => {};
+  const onSubmitSignUpForm = () => {
+    navigate("/sign-in");
+  };
 
   return (
     <Container onSubmit={handleSubmit(onSubmitSignUpForm)}>

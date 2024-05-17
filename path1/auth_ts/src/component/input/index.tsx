@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { InputProps } from "../../type/component.type";
 import styled, { css } from "styled-components";
 import { flexCenter } from "../../style/common.style";
