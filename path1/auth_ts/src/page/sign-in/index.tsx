@@ -14,7 +14,7 @@ const SignInPage = () => {
 
 export default SignInPage;
 
-const Container = styled.div`
+const Container = styled.form`
   & > * {
     padding-bottom: 20px;
   }

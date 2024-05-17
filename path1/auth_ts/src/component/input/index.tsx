@@ -2,12 +2,17 @@ import { FC } from "react";
 import { InputProps } from "../../type/component.type";
 import styled, { css } from "styled-components";
 import { flexCenter } from "../../style/common.style";
+import { FieldValues } from "react-hook-form";
+import { validate } from "../../utils/validate";
 
-const HSInput: FC<InputProps> = ({ children, variant, size, shape, ...rest }) => {
+const HSInput = <T extends FieldValues>({ children, variant, size, shape, register, name, errors, ...rest }: InputProps<T>) => {
+  const errorMessage = errors[name]?.message as unknown as string;
+
   return (
     <InputContainer>
       <Label>{children}</Label>
-      <Input variant={variant} size={size} shape={shape} {...rest} />
+      <Input variant={variant} size={size} shape={shape} {...register(name, validate[name])} {...rest} />
+      {errorMessage && <ErrorMessageBox>{errorMessage}</ErrorMessageBox>}
     </InputContainer>
   );
 };
@@ -41,8 +46,6 @@ const sizeCSS = {
     width: 340px;
     padding: 10px;
     height: 30px;
-    /* height: 40px;
-    padding: 14px; */
   `,
 };
 
@@ -58,7 +61,7 @@ const shapeCSS = {
   `,
 };
 
-const Input = styled.input<InputProps>`
+const Input = styled.input<{ variant: "primary" | "secondary" | "error"; size: "small" | "medium" | "large"; shape: "default" | "shape" | "round" }>`
   ${({ variant }) => variantCSS[variant]}
   ${({ size }) => sizeCSS[size]}
   ${({ shape }) => shapeCSS[shape]}
@@ -72,7 +75,16 @@ const Label = styled.label`
   padding-bottom: 5px;
 `;
 
+const ErrorMessageBox = styled.span`
+  width: 360px;
+  display: flex;
+  justify-content: flex-start;
+  color: red;
+  padding-top: 3px;
+  font-size: 12px;
+`;
+
 const InputContainer = styled.div`
   ${flexCenter}
-  flex-direction:column;
+  flex-direction: column;
 `;
