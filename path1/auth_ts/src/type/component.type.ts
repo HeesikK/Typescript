@@ -14,4 +14,4 @@ export type InputProps<T extends FieldValues> = {
   name: Path<T>;
   errors: FieldErrors<T>;
   register: UseFormRegister<T>;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "style">;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "size">;
