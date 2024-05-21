@@ -1,14 +1,27 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import HSButton from "./button";
 import CloseIcon from "../assets/5003-512.webp";
 
-const Modal: React.FC = () => {
+interface ModalProps {
+  setIsOpenModal: Dispatch<SetStateAction<boolean>>;
+}
+
+const Modal: React.FC<ModalProps> = ({ setIsOpenModal }) => {
+  const closeModal = () => {
+    setIsOpenModal((prev) => !prev);
+  };
+
+  const onAddTask = () => {
+    alert("추가 완료");
+    setIsOpenModal((prev) => !prev);
+  };
+
   return (
     <Wrapper>
       모달
-      <img src={CloseIcon} width={30} />
-      <HSButton variant="primary" size="medium" shape="round" children="추가" />
+      <img src={CloseIcon} width={30} onClick={closeModal} />
+      <HSButton variant="primary" size="medium" shape="round" children="추가" onClick={onAddTask} />
     </Wrapper>
   );
 };
