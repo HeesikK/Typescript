@@ -35,13 +35,15 @@ const variantCSS = {
 
 const sizeCSS = {
   small: css`
-    width: 48px;
+    width: 120px;
+    height: 30px;
     /* height: 24px;
     padding: 12px 36px; */
     font-size: ${({ theme }) => theme.FONT_SIZE.small};
   `,
   medium: css`
-    width: 72px;
+    width: 240px;
+    height: 40px;
     /* height: 36px;
     padding: 24px 72px; */
     font-size: ${({ theme }) => theme.FONT_SIZE.medium};

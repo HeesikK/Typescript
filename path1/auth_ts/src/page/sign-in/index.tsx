@@ -4,15 +4,20 @@ import HSInput from "../../component/input";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignInSchema, SignInType } from "../../const/form-schema";
+import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<SignInType>({ mode: "onChange", resolver: zodResolver(SignInSchema) });
 
-  const onSubmitSignInForm = () => {};
+  const onSubmitSignInForm = () => {
+    navigate("/home");
+  };
 
   return (
     <Container noValidate onSubmit={handleSubmit(onSubmitSignInForm)}>
